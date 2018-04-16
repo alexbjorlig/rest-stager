@@ -57,3 +57,12 @@ typings/
 # dotenv environment variables file
 .env
 
+# remove mocha
+mochawesome-report
+
+# DS_store
+.DS_store
+
+# Don't add javascript to version control
+**/*.js
+**/*.map
