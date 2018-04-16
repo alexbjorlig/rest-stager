@@ -1,0 +1,15 @@
+version: "2"
+checks:
+  method-complexity:
+    enabled: true
+    config:
+      threshold: 6
+exclude_patterns:
+- ".vscode/"
+- "dev-ops/"
+- "**/spec/"
+- "**/*.spec.ts"
+- "**/*.spec.js"
+- "**/node_modules/"
+- "**/package-lock.json"
+- "dist/"
