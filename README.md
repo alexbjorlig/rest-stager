@@ -1,5 +1,6 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/21c2b8b2b241621b87a1/maintainability)](https://codeclimate.com/github/dauledk/rest-stager/maintainability)
-
+[![Test Coverage](https://api.codeclimate.com/v1/badges/21c2b8b2b241621b87a1/test_coverage)](https://codeclimate.com/github/dauledk/rest-stager/test_coverage)
+[![CircleCI](https://circleci.com/gh/dauledk/rest-stager/tree/master.svg?style=svg)](https://circleci.com/gh/dauledk/rest-stager/tree/master)
 # Rest-Stager
 
 *let the data flow from REST to any destination*
