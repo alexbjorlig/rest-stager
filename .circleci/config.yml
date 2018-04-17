@@ -40,4 +40,9 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests!
-      - run: npm run -s test:ci
+      - run:
+          name: Running test
+          command: |
+            ./cc-test-reporter before-build
+            npm run -s test:ci
+            cc-test-reporter after-build --exit-code $?
