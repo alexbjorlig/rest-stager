@@ -9,7 +9,8 @@
     "deleteJs": "find ./src -name '*.js' -type f -delete",
     "test": "./node_modules/mocha/bin/mocha -r tsconfig-paths/register src/**/*.spec.js --reporter mochawesome --reporter-options autoOpen=false",
     "test:ci": "npm run -s deleteJs && npm run -s build && ./node_modules/.bin/nyc ./node_modules/mocha/bin/mocha -r tsconfig-paths/register src/**/*.spec.js --reporter mochawesome --reporter-options autoOpen=false",
-    "lint": "tslint --project tslint.json"
+    "lint": "tslint --project tslint.json",
+    "validate:circleCI": "circleci config validate -c .circleci/config.yml"
   },
   "repository": {
     "type": "git",
