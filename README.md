@@ -1,3 +1,5 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/21c2b8b2b241621b87a1/maintainability)](https://codeclimate.com/github/dauledk/rest-stager/maintainability)
+
 # Rest-Stager
 
 *let the data flow from REST to any destination*
