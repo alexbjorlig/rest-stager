@@ -17,10 +17,10 @@ export class MainExecution {
     // }
     // private static instance: MainExecution;
     // private runConfig: any;
-    private inputParameters: string[];
+    // private inputParameters: string[];
 
     private constructor(runConfig: any, rawInputParameters?: string) {
-        this.runConfig = runConfig;
+        // this.runConfig = runConfig;
         // if (inputParams) {
         //     // this.InputParameters = JSON.parse(inputParams);
         //     this.inputParameters = this.parseInputParameters(inputParams);

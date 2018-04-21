@@ -6,6 +6,12 @@ import { Variable } from '@rest-stager-interfaces/variable';
  * Rest Stager CLI. Maybe you wan't to run the the same config file
  * each day, but with a different variable. Then you can run something like:
  * rest-stager <config-file-full-path> <input-parameters>
+ * For example:
+ * convert: "foo=bar,foo2=gitte2" -->
+ * [
+ *      {id: foo, value: bar},
+ *      {id: foo2, value: gitte2}
+ * ]
  * @export
  * @param {string} inputParameters
  * @returns {Variable[]}
