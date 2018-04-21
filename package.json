@@ -51,6 +51,7 @@
     "rest-stager": "./src/main.js"
   },
   "_moduleAliases": {
-    "@rest-stager-config": "src/config/config"
+    "@rest-stager-config": "src/lib/config/config",
+    "@rest-stager-interfaces": "src/lib/interfaces/"
   }
 }

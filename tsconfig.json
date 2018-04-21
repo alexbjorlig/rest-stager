@@ -12,9 +12,8 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@rest-stager-config": [
-        "src/config/config"
-      ]
+      "@rest-stager-config": [ "src/lib/config/config" ],
+      "@rest-stager-interfaces/*": ["src/lib/interfaces/*"]
     },
     "typeRoots": [
       "node_modules/@types"
