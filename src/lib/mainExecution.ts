@@ -1,6 +1,7 @@
 import { PerformanceMonitor } from './helpers/performance-monitor/performance-monitor';
 import { Variable } from '@rest-stager-interfaces/variable';
 import { logger } from '@rest-stager';
+import { parseInputParametersToVariables } from './parsers/parseInputParametersToVariables';
 
 /**
  * The purpose of this class it so control the main execution.
@@ -14,15 +15,17 @@ export class MainExecution  {
     private static instance: MainExecution;
     private performanceMonitor: PerformanceMonitor;
     private inputParametersAsVariables: Variable[];
-    public static getInstance(runConfig?, rawInputParameters?) {
-        if (!MainExecution .instance) {
-            MainExecution .instance = new MainExecution(runConfig, rawInputParameters);
+    public static getInstance(runConfigPath: string, rawInputParameters: string | null): MainExecution {
+        if (!MainExecution.instance) {
+            MainExecution.instance = new MainExecution(runConfigPath, rawInputParameters);
         }
-        return MainExecution.instance; // ExecutionLogic.instance;
+        return MainExecution.instance;
     }
-    private constructor(runConfigPath: any, rawInputParameters?: string)  {
+    private constructor(runConfigPath: string, rawInputParameters: string | null)  {
         this.performanceMonitor = new PerformanceMonitor();
         // Read the raw input Paramters and save them on this class, so they can be used later!
+        this.inputParametersAsVariables = parseInputParametersToVariables(rawInputParameters);
+        console.log(this.inputParametersAsVariables);
     }
 
     public start() {

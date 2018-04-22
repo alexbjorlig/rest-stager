@@ -21,9 +21,12 @@ export function parseInputParametersToVariables(inputParametersAsString: string)
         if (inputParametersAsString == null || inputParametersAsString.length === 0) {
             return [];
         }
+
+        // "foo=bar,foo2=gitte2"
+        // ['foo=bar', 'foo2=gitte2']
         const splitOnComma: string[] = inputParametersAsString.split(',');
         const returnValue = splitOnComma.map((inputParameter: string) => {
-            const split = inputParameter.split('=');
+            const split: string[] = inputParameter.split('=');
             if (split.length !== 2) {
                 throw new Error(`unvalid input parameters. They should be seperated by =, i.e. foo=bar`);
             }

@@ -11,7 +11,7 @@
     "test:ci": "npm run -s deleteJs && npm run -s build && ./node_modules/.bin/nyc ./node_modules/mocha/bin/mocha -r tsconfig-paths/register src/**/*.spec.js --reporter mochawesome --reporter-options autoOpen=false",
     "lint": "tslint --project tslint.json",
     "validate:circleCI": "circleci config validate -c .circleci/config.yml",
-    "input-param-call": "./node_modules/.bin/nodejs-dashboard node src/main.js stage hanse"
+    "input-param-call": "./node_modules/.bin/nodejs-dashboard node src/main.js stage documents/file.yaml maximumNoOfThreads=4,truncateload=1"
   },
   "repository": {
     "type": "git",
