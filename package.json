@@ -10,7 +10,8 @@
     "test": "./node_modules/mocha/bin/mocha -r tsconfig-paths/register src/**/*.spec.js --reporter mochawesome --reporter-options autoOpen=false",
     "test:ci": "npm run -s deleteJs && npm run -s build && ./node_modules/.bin/nyc ./node_modules/mocha/bin/mocha -r tsconfig-paths/register src/**/*.spec.js --reporter mochawesome --reporter-options autoOpen=false",
     "lint": "tslint --project tslint.json",
-    "validate:circleCI": "circleci config validate -c .circleci/config.yml"
+    "validate:circleCI": "circleci config validate -c .circleci/config.yml",
+    "input-param-call": "./node_modules/.bin/nodejs-dashboard node src/main.js stage hanse"
   },
   "repository": {
     "type": "git",
@@ -29,15 +30,22 @@
   "homepage": "https://github.com/dauledk/rest-stager#readme",
   "dependencies": {
     "commander": "^2.15.1",
+    "lodash": "^4.17.5",
     "module-alias": "^2.0.6",
-    "node-emoji": "^1.8.1"
+    "moment": "^2.22.1",
+    "node-emoji": "^1.8.1",
+    "nodejs-dashboard": "^0.4.3",
+    "rxjs": "^5.5.10",
+    "winston": "^2.4.2"
   },
   "devDependencies": {
     "@types/chai": "^4.1.2",
+    "@types/lodash": "^4.14.107",
     "@types/mocha": "^5.0.0",
     "@types/node": "^9.6.2",
     "@types/node-emoji": "^1.8.0",
     "@types/sinon": "^4.3.1",
+    "@types/winston": "^2.3.9",
     "chai": "^4.1.2",
     "mocha": "^5.1.0",
     "mochawesome": "^3.0.2",
@@ -51,6 +59,7 @@
     "rest-stager": "./src/main.js"
   },
   "_moduleAliases": {
+    "@rest-stager": "src/lib/shared",
     "@rest-stager-config": "src/lib/config/config",
     "@rest-stager-interfaces": "src/lib/interfaces/"
   }

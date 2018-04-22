@@ -66,3 +66,4 @@ mochawesome-report
 # Don't add javascript to version control
 **/*.js
 **/*.map
+**/*.csv
