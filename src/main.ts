@@ -13,12 +13,12 @@ program
     .command('stage')
     .arguments('<configFile.yaml>')
     .arguments('[inputParameters]>')
-    .action((file, inputParameters) => {
+    .action((runConfigPath: string, inputParameters: string | null) => {
         // const yamlFilePath = file;
         // const configObject = yaml.safeLoad(fs.readFileSync(yamlFilePath, 'utf8'));
         // runRestStagerPipeline(configObject, inputParameters, 'cli-test');
         console.log(emoji.emojify(`Starting up! :joy:`));
-        const main = MainExecution.getInstance();
+        const main = MainExecution.getInstance(runConfigPath, inputParameters);
         main.start();
     });
 

@@ -14,7 +14,7 @@
     "paths": {
       "@rest-stager": ["src/lib/shared"],
       "@rest-stager-config": [ "src/lib/config/config" ],
-      "@rest-stager-interfaces/*": ["src/lib/interfaces/*"],
+      "@rest-stager-interfaces/*": ["src/lib/interfaces/*"]
     },
     "typeRoots": [
       "node_modules/@types"

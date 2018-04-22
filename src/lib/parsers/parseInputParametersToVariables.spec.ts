@@ -1,10 +1,11 @@
 import { expect } from 'chai';
 import { parseInputParametersToVariables } from './parseInputParametersToVariables';
 
-describe.only('Testing parseInputParametersToVariables function', () => {
+describe('Testing parseInputParametersToVariables function', () => {
 
     it('Should return empty array, if called with null', () => {
-        expect(parseInputParametersToVariables(null as any)).to.deep.equal([]);
+        const result = parseInputParametersToVariables(null);
+        expect(result).to.deep.equal([]);
     });
 
     it('Should return empy array, if called with string of 0 characters', () => {
@@ -20,4 +21,11 @@ describe.only('Testing parseInputParametersToVariables function', () => {
             {id: 'foo', value: 'bar'}
         ]);
     });
+
+    it('If called with valid params, should return array of variables', () => {
+        expect(parseInputParametersToVariables('foo=bar,foo2=bar2')).to.deep.equal([
+            {id: 'foo', value: 'bar'}, {id: 'foo2', value: 'bar2'}
+        ]);
+    });
+
 });
