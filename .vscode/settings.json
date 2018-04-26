@@ -7,6 +7,8 @@
         "**/.DS_Store": true,
         "src/**/*.js": true,
         "src/**/*.map": true,
+        "test/**/*.js": true,
+        "test/**/*.js.map": true,
     },
     "files.watcherExclude": {
         "**/.git/objects/**": true,
