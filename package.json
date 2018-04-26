@@ -7,8 +7,8 @@
     "start": "node src/main.js",
     "build": "tsc --p tsconfig.json",
     "deleteJs": "find ./src -name '*.js' -type f -delete",
-    "test": "./node_modules/mocha/bin/mocha -r tsconfig-paths/register src/**/*.spec.js --reporter mochawesome --reporter-options autoOpen=false",
-    "test:ci": "npm run -s deleteJs && npm run -s build && ./node_modules/.bin/nyc ./node_modules/mocha/bin/mocha -r tsconfig-paths/register src/**/*.spec.js --reporter mochawesome --reporter-options autoOpen=false",
+    "test": "npx jest --watch",
+    "test:ci": "npx jest --ci",
     "lint": "tslint --project tslint.json",
     "validate:circleCI": "circleci config validate -c .circleci/config.yml",
     "input-param-call": "./node_modules/.bin/nodejs-dashboard node src/main.js stage documents/file.yaml maximumNoOfThreads=4,truncateload=1"
@@ -39,18 +39,13 @@
     "winston": "^2.4.2"
   },
   "devDependencies": {
-    "@types/chai": "^4.1.2",
+    "@types/jest": "^22.2.3",
     "@types/lodash": "^4.14.107",
-    "@types/mocha": "^5.0.0",
     "@types/node": "^9.6.2",
     "@types/node-emoji": "^1.8.0",
-    "@types/sinon": "^4.3.1",
     "@types/winston": "^2.3.9",
-    "chai": "^4.1.2",
-    "mocha": "^5.1.0",
-    "mochawesome": "^3.0.2",
-    "nyc": "^11.6.0",
-    "sinon": "^4.5.0",
+    "jest": "^22.4.3",
+    "ts-jest": "^22.4.4",
     "tsconfig-paths": "^3.3.0",
     "tslint": "^5.9.1",
     "typescript": "^2.8.1"
@@ -62,5 +57,23 @@
     "@rest-stager": "src/lib/shared",
     "@rest-stager-config": "src/lib/config/config",
     "@rest-stager-interfaces": "src/lib/interfaces/"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom" : [
+      "src/lib/**/*.ts"
+    ]
   }
 }
