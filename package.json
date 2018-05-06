@@ -59,6 +59,7 @@
     "@rest-stager-interfaces": "src/lib/interfaces/"
   },
   "jest": {
+    "testEnvironment": "node",
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },
